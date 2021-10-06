@@ -1,0 +1,101 @@
+
+    .layout {
+        width: auto;
+        alignment: center;
+
+    }
+
+ .dropdowns{
+     height:40px;
+     border-radius: 5px;
+     border-color: #cccccc;
+     color: #555555;
+ }
+
+    .phone{
+        height:40px;
+    }
+
+    .paper {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+        width: 900px;
+
+    }
+
+
+
+    .paper2 {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+        width: 1000px;
+    }
+
+    .buttons{
+        display: flex;
+        margin-top: 3px;
+        margin-left: 350px;
+
+    }
+    .button{
+
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-bottom: 3px;
+    }
+
+    .roots{
+        flexGrow: 1,
+    }
+
+    .papers{
+        padding: 3px;
+        text-align: left;
+        margin-left: 10px;
+
+
+    }
+
+
+    .papers1{
+        word-wrap:break-word;
+        word-break:break-all;
+        word-break:break-word;
+    }
+    .box{
+        overflow-y: scroll;
+        color: red;
+    }
+    .overflow-scrolling {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .facts{
+        margin-left: 8px;
+    }
+
+    .bt{
+        margin-bottom: 10px;
+    }
+
+    .rategrid{
+
+        margin-left: 10px;
+    }
+
+    .inputBack{
+        background-color: #FFFFFF;
+
+    }
+    Input{
+        color: black;
+    }
+
+

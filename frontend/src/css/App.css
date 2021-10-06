@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+.container1{
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+}
+
