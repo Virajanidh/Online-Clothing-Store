@@ -1,4 +1,5 @@
 # Online-Clothing-Store
 
-## Website URL
-[click Here >>](https://onlineclothingstore-eda75.web.app)
+
+[Website URL](https://onlineclothingstore-eda75.web.app)
+[Deployed Backend Repository]
