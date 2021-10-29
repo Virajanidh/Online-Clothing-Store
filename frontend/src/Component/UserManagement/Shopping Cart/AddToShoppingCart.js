@@ -73,7 +73,7 @@ export default class AddToShoppingCart extends Component{
     }
     //Adding to the array
     else{
-        axios.get('http://localhost:4000/products/view-product/' + this.props.productId)
+        axios.get('https://clothappbackend.herokuapp.com/products/view-product/' + this.props.productId)
             .then(res => {
                 if(sessionStorage.getItem("count")){
                     sessionStorage.removeItem("count");

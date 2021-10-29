@@ -45,7 +45,7 @@ class UserManagement extends Component{
             this.setState({
                 Username: user,
             }, () => {
-                axios.post('http://localhost:4000/users/getOne' + this.state.Username)
+                axios.post('https://clothappbackend.herokuapp.com/users/getOne' + this.state.Username)
                     .then(res => {
                         this.setState({
                             UserId:res.data._id,
@@ -73,7 +73,7 @@ class UserManagement extends Component{
                 CurrentPassword:this.state.CurrentPassword
             };
 
-            axios.put('http://localhost:4000/users/edit-details'+this.state.UserId, newDetails).then(res=>{
+            axios.put('https://clothappbackend.herokuapp.com/users/edit-details'+this.state.UserId, newDetails).then(res=>{
                 if(res.data.success){
                     swal("Hey!", "You changed your data!", "success").then(() =>null );
                     this.setState({
@@ -175,7 +175,7 @@ class UserManagement extends Component{
 
                 .then((willDelete) => {
                     if (willDelete) {
-                        axios.post('http://localhost:4000/users/delete-user' + this.state.Username, deleteUser ).then(res => {
+                        axios.post('https://clothappbackend.herokuapp.com/users/delete-user' + this.state.Username, deleteUser ).then(res => {
                             if (res.data.success) {
                                  AuthService.logout();
                                 this.props.history.push('/');

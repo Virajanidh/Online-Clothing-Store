@@ -57,7 +57,7 @@ class AddProduct extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/category/all')
+        axios.get('https://clothappbackend.herokuapp.com/category/all')
             .then(res => {
                 this.setState({
                     CategoryList: res.data
@@ -91,7 +91,7 @@ this.setState({loading:true})
         }
 
 
-            axios.post('http://localhost:4000/products/add-product', formData, {headers: {"Content-type": "multipart/form-data"}})
+            axios.post('https://clothappbackend.herokuapp.com/products/add-product', formData, {headers: {"Content-type": "multipart/form-data"}})
                 .then(()=>  this.props.history.push('/viewListOfProduct') )
             ;
 

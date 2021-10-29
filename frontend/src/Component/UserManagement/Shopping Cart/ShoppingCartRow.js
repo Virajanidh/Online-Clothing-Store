@@ -16,7 +16,7 @@ export class ShoppingCartRow extends Component{
 
 
     componentDidMount() {
-        axios.get('http://localhost:4000/products/view-product/' +this.props.obj.ProductId)
+        axios.get('https://clothappbackend.herokuapp.com/products/view-product/' +this.props.obj.ProductId)
             .then(res => {
                 this.setState({
                     products:res.data

@@ -3,7 +3,7 @@ import {SubmissionError} from "redux-form";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
-const url = 'http://localhost:4000';
+const url = 'https://clothappbackend.herokuapp.com';
 
 export const showForm =() => {
     return {

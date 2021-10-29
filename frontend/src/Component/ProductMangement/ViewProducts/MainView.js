@@ -31,7 +31,7 @@ class MainView extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/products/')
+        axios.get('https://clothappbackend.herokuapp.com/products/')
             .then(res => {
                 this.setState({
                     ProductArray: res.data
@@ -50,7 +50,7 @@ class MainView extends Component{
     }
 
     getCategories = () => {
-        axios.get('http://localhost:4000/category/all')
+        axios.get('https://clothappbackend.herokuapp.com/category/all')
             .then(res => {
                 this.setState({
                     CategoryName: res.data

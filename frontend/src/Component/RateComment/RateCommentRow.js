@@ -59,7 +59,7 @@ export default class RateCommentRow extends Component{
 
 
         };
-        axios.post('http://localhost:4000/rating/add-rating', ratingObject)
+        axios.post('https://clothappbackend.herokuapp.com/rating/add-rating', ratingObject)
             .then(res => console.log(res.data));
 
         this.setState({

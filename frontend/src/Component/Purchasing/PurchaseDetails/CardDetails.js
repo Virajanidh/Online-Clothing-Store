@@ -169,7 +169,7 @@ export default class CardDetails extends React.Component {
     componentDidMount() {
         this.state.uname = AuthService.getUsername();
 
-        axios.get('http://localhost:4000/credit-card/get-single-creditcard/' + this.state.uname)
+        axios.get('https://clothappbackend.herokuapp.com/credit-card/get-single-creditcard/' + this.state.uname)
             .then(res => {
                 if(res.data === null){
 
@@ -199,7 +199,7 @@ export default class CardDetails extends React.Component {
 
             if (!(this.state.available === true)) {
 
-                axios.post('http://localhost:4000/credit-card/add-creditcard', this.state.CreditCard)
+                axios.post('https://clothappbackend.herokuapp.com/credit-card/add-creditcard', this.state.CreditCard)
                     .then(res => console.log(res.data));
 
                 this.props.history.push('/review-order-details/' + this.state.uname)
@@ -207,7 +207,7 @@ export default class CardDetails extends React.Component {
 
             } else if (this.state.available === true) {
 
-                axios.put('http://localhost:4000/credit-card/update-creditcard/' + this.state.uname, this.state.CreditCard)
+                axios.put('https://clothappbackend.herokuapp.com/credit-card/update-creditcard/' + this.state.uname, this.state.CreditCard)
                     .then((res) => {
                         console.log(res.data)
                         console.log('Credit card successfully updated');

@@ -75,7 +75,7 @@ export default class ReviewDetails extends Component {
 
         this.state.uname = AuthService.getUsername();
 
-        axios.get('http://localhost:4000/billing/get-one-bill/' + this.state.uname)
+        axios.get('https://clothappbackend.herokuapp.com/billing/get-one-bill/' + this.state.uname)
             .then(res => {
                 this.setState({
                     Billing:res.data,
@@ -89,7 +89,7 @@ export default class ReviewDetails extends Component {
                 console.log(error + 'geterror');
             })
 
-        axios.get('http://localhost:4000/credit-card/get-single-creditcard/' + this.state.uname)
+        axios.get('https://clothappbackend.herokuapp.com/credit-card/get-single-creditcard/' + this.state.uname)
             .then(res => {
                 if(res.data === null){
                     this.setState({
@@ -172,14 +172,14 @@ export default class ReviewDetails extends Component {
         // this.SaveTotal();
         if (this.state.saveCredit === true) {
 
-            axios.delete('http://localhost:4000/credit-card/delete-credit-card/'+this.state.uname)
+            axios.delete('https://clothappbackend.herokuapp.com/credit-card/delete-credit-card/'+this.state.uname)
                 .then(res => console.log(res.data));
 
         }
 
         axios.all([
-            axios.post('http://localhost:4000/billing/add-payment/' + this.state.uname+"/"+this.state.totalpay,this.state.products),
-            axios.post('http://localhost:4000/products/sold',this.state.products)
+            axios.post('https://clothappbackend.herokuapp.com/billing/add-payment/' + this.state.uname+"/"+this.state.totalpay,this.state.products),
+            axios.post('https://clothappbackend.herokuapp.com/products/sold',this.state.products)
         ]).then(()=> this.setState({
             loading:false
         })).then(()=>

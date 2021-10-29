@@ -31,7 +31,7 @@ class ProductFullDetails extends Component{
 
 
    getFullDetails = () => {
-       axios.get('http://localhost:4000/products/view-product/' + this.props.match.params.id)
+       axios.get('https://clothappbackend.herokuapp.com/products/view-product/' + this.props.match.params.id)
            .then(res => {
                this.setState({
                    Products:res.data,
@@ -45,7 +45,7 @@ class ProductFullDetails extends Component{
 
    getRelavantProduct = () => {
         this.setState({didLoad:false})
-       axios.get('http://localhost:4000/products/get-products/' + this.state.Products.SubCategory)
+       axios.get('https://clothappbackend.herokuapp.com/get-products/' + this.state.Products.SubCategory)
            .then(res => {
                this.setState({
                    relateProduct: res.data,
@@ -58,7 +58,7 @@ class ProductFullDetails extends Component{
     }
 
     getComments = () => {
-        axios.get('http://localhost:4000/rating/get-rate-comments/' + this.props.match.params.id)
+        axios.get('https://clothappbackend.herokuapp.com/rating/get-rate-comments/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     comments:res.data,

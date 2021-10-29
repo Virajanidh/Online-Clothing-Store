@@ -28,11 +28,11 @@ class AddToWishlist extends Component {
                     productId: nextProps.productId
                 });
                 if(AuthService.getUsername()){
-                    axios.post("http://localhost:4000/users/getOne"+AuthService.getUsername()).then(response=>{
+                    axios.post("https://clothappbackend.herokuapp.com/users/getOne"+AuthService.getUsername()).then(response=>{
                         this.setState({
                             userId:response.data._id
                         }, ()=>{
-                            axios.post('http://localhost:4000/wishlist/check-product' + response.data._id, null, { headers: authHeader() })
+                            axios.post('https://clothappbackend.herokuapp.com/wishlist/check-product' + response.data._id, null, { headers: authHeader() })
                                 .then(res => {
                                     if(res.data.length>0){
                                         this.setState({
@@ -76,7 +76,7 @@ class AddToWishlist extends Component {
                         this.state.product.splice(i, 1);
                     }
                 }
-                axios.put('http://localhost:4000/wishlist/edit-details' + this.state.userId, this.state.product)
+                axios.put('https://clothappbackend.herokuapp.com/wishlist/edit-details' + this.state.userId, this.state.product)
                     .then(() => {
                         this.setState({
                             addToWishList: false
@@ -87,7 +87,7 @@ class AddToWishlist extends Component {
 
                 if (this.state.length > 0) {
                     //User list is there
-                    axios.get('http://localhost:4000/products/view-product/' + this.props.productId)
+                    axios.get('https://clothappbackend.herokuapp.com/products/view-product/' + this.props.productId)
                         .then(res => {
                             const productObj = {
                                 ProductId: res.data._id,
@@ -102,7 +102,7 @@ class AddToWishlist extends Component {
                                 Size:this.props.size
                             };
                             this.state.product.push(productObj);
-                            axios.put('http://localhost:4000/wishlist/edit-details' + this.state.userId, this.state.product)
+                            axios.put('https://clothappbackend.herokuapp.com/wishlist/edit-details' + this.state.userId, this.state.product)
                                 .then(() => {
                                     this.setState({
                                         addToWishList: true
@@ -113,7 +113,7 @@ class AddToWishlist extends Component {
 
                 } else {
                     //User list is not there
-                    axios.get('http://localhost:4000/products/view-product/' + this.props.productId)
+                    axios.get('https://clothappbackend.herokuapp.com/products/view-product/' + this.props.productId)
                         .then(res => {
                             const productObj = {
                                 ProductId: res.data._id,
@@ -133,7 +133,7 @@ class AddToWishlist extends Component {
                                 UserId: this.state.userId,
                                 ProductObject: proObj
                             };
-                            axios.post('http://localhost:4000/wishlist/add-to-wishlist', finalObj)
+                            axios.post('https://clothappbackend.herokuapp.com/wishlist/add-to-wishlist', finalObj)
                                 .then(() => {
                                 });
                             this.setState({addToWishList: true});

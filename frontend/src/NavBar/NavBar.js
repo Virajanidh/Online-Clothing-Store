@@ -65,7 +65,7 @@ class NavBar extends Component {
             })
         }, 1000)
 
-        axios.get('http://localhost:4000/category/all')
+        axios.get('https://clothappbackend.herokuapp.com/category/all')
             .then(res => {
                 this.setState({
                     CategoryList: res.data

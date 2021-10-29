@@ -26,7 +26,7 @@ class AddNewItemToProduct extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/products/view-product/' + this.props.match.params.id)
+        axios.get('https://clothappbackend.herokuapp.com/products/view-product/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     Products:res.data,
@@ -58,7 +58,7 @@ class AddNewItemToProduct extends Component{
             formData.append("large", this.state.newItem.large);
             formData.append("xl", this.state.newItem.xl);
 
-            axios.post('http://localhost:4000/products/addnewItemToProduct/' + this.props.match.params.id, formData)
+            axios.post('https://clothappbackend.herokuapp.com/addnewItemToProduct/' + this.props.match.params.id, formData)
                 .then((res) => {
                     // Redirect to Product List
                     this.props.history.push('/viewListOfProduct')

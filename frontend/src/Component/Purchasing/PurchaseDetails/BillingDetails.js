@@ -199,7 +199,7 @@ class  BillingDetails extends Component{
 
         this.state.Billing.userName   = AuthService.getUsername();
         this.state.uname = AuthService.getUsername();
-        axios.get('http://localhost:4000/billing/get-one-bill/' + this.state.Billing.userName)
+        axios.get('https://clothappbackend.herokuapp.com/billing/get-one-bill/' + this.state.Billing.userName)
             .then(res => {
                 if(res.data === null){
 
@@ -231,7 +231,7 @@ class  BillingDetails extends Component{
             if (!(this.state.available === true)) {
 
 
-                axios.post('http://localhost:4000/billing/add-billing', this.state.Billing)
+                axios.post('https://clothappbackend.herokuapp.com/billing/add-billing', this.state.Billing)
                     .then(res => console.log("kooooo" + res.data));
 
                 if (this.state.Billing.cashDelivery===true) {
@@ -250,7 +250,7 @@ class  BillingDetails extends Component{
 
             else if (this.state.available === true) {
 
-                axios.put('http://localhost:4000/billing/update-bill/' + this.state.uname, this.state.Billing)
+                axios.put('https://clothappbackend.herokuapp.com/billing/update-bill/' + this.state.uname, this.state.Billing)
                     .then((res) => {
                         console.log(res.data)
                         console.log('Billing  successfully updated');

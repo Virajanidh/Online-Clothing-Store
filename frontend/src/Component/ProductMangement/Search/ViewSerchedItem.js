@@ -33,7 +33,7 @@ checkNoResult = () => {
 
 getdata = () =>{
     console.log(this.props.match.params.id)
-    axios.get('http://localhost:4000/products/search/' + this.props.match.params.id)
+    axios.get('https://clothappbackend.herokuapp.com/products/search/' + this.props.match.params.id)
         .then(res => {
             this.setState({
                 product: res.data
