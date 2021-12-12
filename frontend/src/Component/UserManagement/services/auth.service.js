@@ -1,7 +1,7 @@
 import axios from "axios";
 let Username='';
 
-// const API_URL = "https://servershopping.azurewebsites.net/users/";
+
 const API_URL = "https://clothappbackend.herokuapp.com/users/";
 
 class AuthService {
